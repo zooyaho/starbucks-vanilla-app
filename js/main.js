@@ -77,6 +77,19 @@ new Swiper('.promotion .swiper', {
   }
 });
 
+/* Awards Swiper */
+new Swiper('.awards .swiper', {
+  slidesPerView: 5,
+  loop: true,
+  autoplay: true,
+  spaceBetween: 30,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
+  }
+});
+
+
 /*  토글버튼으로 프로모션 숨김 동작 구현 */
 const promotionEl = document.querySelector('.promotion');
 const poromotionTogglebtn = document.querySelector('.toggle-promotion');
@@ -121,7 +134,7 @@ floatingObject('.floating3', 1.5, 20);
 const spyEls = document.querySelectorAll('section.scroll-spy');
 
 spyEls.forEach( function (spyEl) {
-  
+
   new ScrollMagic // Scene(): 감시, addTo(): 컨트롤러?라는걸 추가함
     .Scene({
       triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
