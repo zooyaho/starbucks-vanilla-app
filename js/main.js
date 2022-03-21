@@ -144,3 +144,8 @@ spyEls.forEach( function (spyEl) {
     .addTo(new ScrollMagic.Controller()); // 우리가 추가한 옵션들을 내부 컨트롤러에 내용을 할당해서 실제로 동작할 수 있는 구조를 만들어주는 용도
 
 });
+
+/* Copyright 연도 자동 갱신 */
+const thisYear = document.querySelector('.this-year');
+
+thisYear.textContent = new Date().getFullYear(); // textContent: 요소의 글자 내용을 알아내거나 값을 지정하는 용도로 사용
