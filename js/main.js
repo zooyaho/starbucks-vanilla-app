@@ -115,3 +115,19 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', .5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+
+/* ScrollMagic */
+const spyEls = document.querySelectorAll('section.scroll-spy');
+
+spyEls.forEach( function (spyEl) {
+  
+  new ScrollMagic // Scene(): 감시, addTo(): 컨트롤러?라는걸 추가함
+    .Scene({
+      triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+      triggerHook: .8 // 뷰포트에서 실행 시작할 요소의 위치 지정
+    })
+    .setClassToggle(spyEl, 'show') // 인수 (클래스를 토글할 요소, 토글할 클래스 이름)
+    .addTo(new ScrollMagic.Controller()); // 우리가 추가한 옵션들을 내부 컨트롤러에 내용을 할당해서 실제로 동작할 수 있는 구조를 만들어주는 용도
+
+});
