@@ -448,6 +448,7 @@ header .badges .badge {
   bottom: 40px;
   left: 0;
   right: 0;
+  z-index: 0; /* default 10 */
 }
 .notice .promotion .swiper-pagination .swiper-pagination-bullet {
   background-image: url("../images/promotion_slide_pager.png");
@@ -693,16 +694,16 @@ header .badges .badge {
 .reserve-store .medal .front {
   transform: rotateY(0deg);
 }
-.reserve-store:hover .medal .front {
+.reserve-store .medal:hover .front {
   transform: rotateY(180deg);
 }
 .reserve-store .medal .back {
   transform: rotateY(-180deg);
 }
-.reserve-store:hover .medal .back {
+.reserve-store .medal:hover .back {
   transform: rotateY(0deg);
 }
-.reserve-store:hover .medal .back .btn {
+.reserve-store .medal .back .btn {
   position: absolute;
   top: 240px;
   left: 0;
@@ -865,4 +866,20 @@ footer .copyright {
 }
 footer .logo {
   margin: 30px auto 0;
+}
+
+#to-top {
+  width: 42px;
+  height: 42px;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
 }

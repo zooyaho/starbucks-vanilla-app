@@ -15,29 +15,48 @@ searchInputEl.addEventListener('blur', function() {
   searchInputEl.setAttribute('placeholder','');
 });
 
+
 const badgeEl = document.querySelector('header .badges');
+const toTopEl = document.querySelector('#to-top');
 
 // _.throttle(핸들러(함수),시간(ms)): ms단위로 부하는 줘서 함수가 우루루 실행되는 것을 방지함
 window.addEventListener('scroll', _.throttle(function() {
   //scrollY : 스크롤 시 y축 값을 알수 있음
   if(window.scrollY > 500){
-    // 배지 숨기기
+    // 배지 숨기기!
     // badgeEl.style.display = 'none';
     // gsap.to(요소, 지속시간, 옵션); 옵션으로 객체({})형태를 사용함!
     gsap.to(badgeEl, .6, {
       opacity: 0, //opacity만 사용하면 시각적으로만 보이지 않게 되고 위치에는 있게됨.
       display: 'none' //값이 아닌 속성은 중간값이 존재하지 않아 자연스럽게 사라지지 않음.
     });
+
+    // 버튼 보이기! *css선택자만 적어도 가능
+    gsap.to('#to-top', .2, {
+      x: 0 // x축으로 100px 이동
+    });
+
   } else {
-    // 배지 보이기
+    // 배지 보이기!
     // badgeEl.style.display = 'block';
     gsap.to(badgeEl, .6, {
       opacity: 1,
       display: 'block'
     });
+    // 버튼 숨기기!
+    gsap.to(toTopEl, .2, {
+      x: 100 // x축으로 100px 이동
+    });
   }
 
 }, 300)); // 300 = 0.3s
+
+/* ScrollTo */
+toTopEl.addEventListener('click', function(){
+  gsap.to(window, .7, { 
+    scrollTo: 0
+  });
+});
 
 const fadeEls = document.querySelectorAll('.visual .fade-in');
 
