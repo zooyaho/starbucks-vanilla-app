@@ -60,7 +60,7 @@ new Swiper('.notice-line .swiper', {
 });
 
 /* Promotion Swiper */
-new Swiper('.promotion .swiper', {
+new Swiper('.promotion .pc .swiper', {
   slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
   spaceBetween: 10, // 슬라이드 사이 여백
   centeredSlides: true, // 1번 슬라이드가 가운데 보이기
@@ -69,7 +69,7 @@ new Swiper('.promotion .swiper', {
     delay: 5000 // default 3000(3초)
   },
   pagination: {
-    el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
+    el: '.promotion .pc .swiper-pagination', // 페이지 번호 요소 선택자
     clickable: true // 사용자의 페이지 번호 요소 제어 가능 여부
   },
   navigation: {
@@ -132,16 +132,32 @@ floatingObject('.floating3', 1.5, 20);
 
 
 /* ScrollMagic */
+const browserWidth = window.outerWidth;
 const spyEls = document.querySelectorAll('section.scroll-spy');
 
-spyEls.forEach( function (spyEl) {
+if(browserWidth < 768) {
+  /* MOBILE VERSION */
+  spyEls.forEach( function (spyEl) {
 
-  new ScrollMagic // Scene(): 감시, addTo(): 컨트롤러?라는걸 추가함
-    .Scene({
-      triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
-      triggerHook: .8 // 뷰포트에서 실행 시작할 요소의 위치 지정
-    })
-    .setClassToggle(spyEl, 'show') // 인수 (클래스를 토글할 요소, 토글할 클래스 이름)
-    .addTo(new ScrollMagic.Controller()); // 우리가 추가한 옵션들을 내부 컨트롤러에 내용을 할당해서 실제로 동작할 수 있는 구조를 만들어주는 용도
+    new ScrollMagic // Scene(): 감시, addTo(): 컨트롤러?라는걸 추가함
+      .Scene({
+        triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+        triggerHook: 1 // 뷰포트에서 실행 시작할 요소의 위치 지정
+      })
+      .setClassToggle(spyEl, 'show') // 인수 (클래스를 토글할 요소, 토글할 클래스 이름)
+      .addTo(new ScrollMagic.Controller()); // 우리가 추가한 옵션들을 내부 컨트롤러에 내용을 할당해서 실제로 동작할 수 있는 구조를 만들어주는 용도
+  
+  });
+} else {
+  spyEls.forEach( function (spyEl) {
 
-});
+    new ScrollMagic // Scene(): 감시, addTo(): 컨트롤러?라는걸 추가함
+      .Scene({
+        triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
+        triggerHook: .8 // 뷰포트에서 실행 시작할 요소의 위치 지정
+      })
+      .setClassToggle(spyEl, 'show') // 인수 (클래스를 토글할 요소, 토글할 클래스 이름)
+      .addTo(new ScrollMagic.Controller()); // 우리가 추가한 옵션들을 내부 컨트롤러에 내용을 할당해서 실제로 동작할 수 있는 구조를 만들어주는 용도
+  
+  });
+}

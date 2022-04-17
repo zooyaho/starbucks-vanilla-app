@@ -67,6 +67,25 @@ a {
   color: #333;
   background-color:#fff;
 }
+.btn.btn--green {
+  color: #fff;
+  border-color: #fff;
+}
+.btn.btn--green:hover {
+  color: #fff;
+  background-color:#00704a;
+  border-color: #00704a;
+}
+.btn.btn--reverse--green {
+  color: #fff;
+  background-color:#00704a;
+  border: #00704a;
+}
+.btn.btn--reverse--green:hover {
+  color: #00704a;
+  background-color:#fff;
+  border: #fff;
+}
 .back-to-position {
   opacity: 0;
   transition: 1s;
@@ -94,6 +113,22 @@ a {
   transition: 1.9s;
 }
 
+/* MO */
+header .mo-header {
+  display: none;
+}
+.mo-gnb.hide {
+  display: none;
+}
+.season-product.scroll-spy .inner > img:first-child  {
+  display: none;
+}
+.rewards .mo {
+  display: none;
+}
+.pick-your-favorite .inner.mo {
+  display: none;
+}
 
 /* HEADER */
 header {
@@ -260,7 +295,6 @@ header .badges .badge {
   margin-bottom: 12px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, .15);
   cursor: pointer;
-
 }
 
 /* FOOTER */

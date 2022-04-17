@@ -12,7 +12,6 @@
   top: 88px;
   left: -10px;
 }
-/* .visual .title image {} */
 .visual .title .btn {
   position: absolute;
   top: 259px;
@@ -125,7 +124,6 @@
 .notice .notice-line .inner__right h2{
   font-size: 17px;
   font-weight: 700;
-
 }
 .notice .notice-line .inner__right .toggle-promotion {
   width: 62px;
@@ -137,6 +135,10 @@
 }
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
+}
+/* PROMOTION */
+.notice .promotion .mo {
+  display: none;
 }
 .notice .promotion {
   height: 693px;
@@ -324,7 +326,7 @@
   
 }
 .season-product .inner {
-  height: 400PX;
+  height: 400px;
 }
 .season-product .floating3 {
   position: absolute;

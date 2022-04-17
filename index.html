@@ -35,6 +35,7 @@
 
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/responsive.css">
 
   <!-- Gsap & ScrollToPlugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js" integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -50,17 +51,20 @@
   <script defer src="./js/youtube.js"></script>
   <script defer src="./js/common.js"></script>
   <script defer src="./js/main.js"></script>
+  <script defer src="./js/responsive.js"></script>
 </head>
 <body>
 
   <!-- HEADER -->
   <header>
-    <div class="inner">
 
+    <!-- s: pc_ver -->
+    <div class="inner">
       <a href="/" class="logo">
         <img src="./images/starbucks_logo.png" alt="STARBUCKS">
       </a>
 
+      <!-- s: sub-menu -->
       <div class="sub-menu">
         <ul class="menu">
           <li>
@@ -70,10 +74,8 @@
             <a href="javascript:void(0)">My Starbucks</a>
           </li>
           <li>
-          <li>
             <a href="javascript:void(0)">Customer Service & Ideas</a>
           </li>
-          <li>
           <li>
             <a href="javascript:void(0)">Find a Store</a>
           </li>
@@ -83,7 +85,9 @@
           <div class="material-icons">search</div>
         </div>
       </div>
+      <!-- e: sub-menu -->
 
+      <!-- s: main-menu -->
       <ul class="main-menu">
         <li class="item">
           <div class="item__name">COFFEE</div>
@@ -382,8 +386,32 @@
           </div>
         </li>
       </ul>
-
+      <!-- e: main-menu -->
     </div>
+    <!-- e: pc_ver -->
+
+    <!-- s: mo_ver_header -->
+    <div class="mo-header">
+      <a href="/" class="logo">
+        <img src="./images/starbucks_logo.png" alt="STARBUCKS">
+      </a>
+      <div class="sub-menu">
+        <nav>
+          <ul>
+            <li>
+              <a href="javascript:void(0)" class="login"><span class="a11y">login</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="spot"><span class="a11y">my starbucks</span></a>
+            </li>
+            <li>
+              <a href="javascript:void(0)" class="menu"><span class="a11y">menu</span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <!-- e: mo_ver -->
 
     <div class="badges">
       <div class="badge">
@@ -395,6 +423,55 @@
     </div>
   </header>
   <!-- //HEADER -->
+
+  <!-- s: MO-GNB -->
+  <div class="mo-gnb hide">
+    <div class="gnb-bg"></div>
+    <div class="btn-gnb-close">
+      <span class="material-icons">close</span>
+    </div>
+    <div class="gnb-wrap">
+      <div class="gnb-search">
+        <div class="search-wrap">
+          <input type="text">
+          <input type="button" value="Search">
+        </div>
+      </div>
+      <nav class="gnb-menu">
+        <ul>
+          <li class="list-item">
+            <a class="btn-menulist" href="javascript:void(0)">
+              <span>My Starbucks</span>
+              <span class="material-icons">expand_more</span>
+            </a>
+          </li>
+          <ul class="list sub-list">
+            <li><a href="javascript:void(0)">한눈에 보기</a></li>
+            <li><a class="btn-menulist" href="javascript:void(0)">My 리워드<span class="material-icons">expand_more</span></a></li>
+            <ul class="sub-list">
+              <li><a href="javascript:void(0)">리워드 및 혜택</a></li>
+              <li><a href="javascript:void(0)">별 히스토리</a></li>
+            </ul>
+            <li><a class="btn-menulist" href="javascript:void(0)">My 스타벅스 카드<span class="material-icons">expand_more</span></a></li>
+            <li><a class="btn-menulist" href="javascript:void(0)">My 스타벅스<span class="material-icons">expand_more</span></a></li>
+            <li><a class="btn-menulist" href="javascript:void(0)">My 쿠폰<span class="material-icons">expand_more</span></a></li>
+            <li><a href="javascript:void(0)">My 캘린더</a></li>
+            <li><a href="javascript:void(0)">My 메뉴</a></li>
+            <li><a href="javascript:void(0)">My 고객의 소리</a></li>
+            <li><a href="javascript:void(0)">전자영수증</a></li>
+            <li><a href="javascript:void(0)">개인컵 리워드 설정</a></li>
+            <li><a href="javascript:void(0)">My DT Pass</a></li>
+            <li><a href="javascript:void(0)">개인정보관리</a></li>
+          </ul>
+          <!-- <li class="list-item">
+            <a href="javascript:void(0)">COFFEE</a>
+          </li> -->
+
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <!-- e: MO-GNB -->
 
   <!-- VISUAL -->
   <section class="visual">
@@ -462,41 +539,75 @@
     </div>
     <!-- // Notice-line -->
 
-    <div class="promotion">
-      <!-- Slider main container -->
-      <div class="swiper">
-        <div class="swiper-wrapper">
-          <!-- Slides -->
-          <div class="swiper-slide">
-            <img src="./images/promotion_slide1.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
+    <div class="promotion ">
+      <div class="pc">
+        <!-- Slider main container -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide1.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide2.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide3.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide4.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide5.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <!-- // Slides -->
           </div>
-          <div class="swiper-slide">
-            <img src="./images/promotion_slide2.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
-          </div>
-          <div class="swiper-slide">
-            <img src="./images/promotion_slide3.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
-          </div>
-          <div class="swiper-slide">
-            <img src="./images/promotion_slide4.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
-          </div>
-          <div class="swiper-slide">
-            <img src="./images/promotion_slide5.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
-            <a href="javascript:void(0)" class="btn">자세히 보기</a>
-          </div>
-          <!-- // Slides -->
+        </div>
+        <!-- // Slider main container -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-prev">
+          <div class="material-icons">arrow_back</div>
+        </div>
+        <div class="swiper-next">
+          <div class="material-icons">arrow_forward</div>
         </div>
       </div>
-      <!-- // Slider main container -->
-      <div class="swiper-pagination"></div>
-      <div class="swiper-prev">
-        <div class="material-icons">arrow_back</div>
-      </div>
-      <div class="swiper-next">
-        <div class="material-icons">arrow_forward</div>
+
+      <div class="mo">
+        <!-- Slider main container -->
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide1.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide2.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide3.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide4.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/promotion_slide5.jpg" alt="2021 뉴이어, 스타벅스와 함께 즐겁고 활기차게 시작하세요!">
+              <a href="javascript:void(0)" class="btn">자세히 보기</a>
+            </div>
+            <!-- // Slides -->
+          </div>
+        </div>
+        <!-- // Slider main container -->
+        <div class="swiper-pagination"></div>
       </div>
     </div>
 
@@ -505,14 +616,48 @@
 
   <!-- REWARDS -->
   <section class="rewards">
-    <div class="bg-left"></div>
-    <div class="bg-right"></div>
+    <div class="pc">
+      <div class="bg-left"></div>
+      <div class="bg-right"></div>
+  
+      <div class="inner">
+        <div class="btn-group">
+          <div class="btn btn--reverse sign-up">회원가입</div>
+          <div class="btn sign-in">로그인</div>
+          <div class="btn gift">e-Gift 선물하기</div>
+        </div>
+      </div>
+    </div>
 
-    <div class="inner">
-      <div class="btn-group">
-        <div class="btn btn--reverse sign-up">회원가입</div>
-        <div class="btn sign-in">로그인</div>
-        <div class="btn gift">e-Gift 선물하기</div>
+    <div class="mo">
+      <div class="contain">
+        <div class="signin-wrap">
+          <div class="logo">
+            <img src="./images/rewards-logo.png" alt="STARBUCKS LOGO">
+          </div>
+          <h2>
+            스타벅스만의 특별한 혜택,<br>스타벅스 리워드
+          </h2>
+          <p>
+            스타벅스 회원이세요? <br> 로그인을 통해 나만의 리워드를 확인해보세요.
+            <br>
+            스타벅스 회원이 아니세요?<br>가입을 통해 리워드 혜택을 즐기세요.
+          </p>
+          <div class="btn-group">
+            <div class="btn btn--reverse--green sign-up">회원가입</div>
+            <div class="btn btn--green sign-in">로그인</div>
+          </div>
+        </div>
+        <div class="gift-wrap">
+          <p>
+            회원 가입 후, 스타벅스 e-Gift Card를 <br>"나에게 선물하기"로 구매하시고, <br>편리하게 등록하세요!
+            <br>
+            카드를 등록하여 스타벅스 리워드 회원이 되신 후, <br>첫 구매를 하시면 무료 음료쿠폰을 드립니다!
+          </p>
+          <div class="btn-group">
+            <div class="btn btn--green gift">e-Gift 선물하기</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -538,7 +683,9 @@
     <!-- inner -->
     <div class="inner">
       <img src="./images/floating3.png" alt="icon" class="floating floating3">
-      <img src="./images/season_product_image.png" alt="" class="product back-to-position to-right delay-0"/>
+      <div class="img-wrap">
+        <img src="./images/season_product_image.png" alt="" class="product back-to-position to-right delay-0"/>
+      </div>
 
       <div class="text-group">
         <img src="./images/season_product_text1.png" alt="" class="title back-to-position to-left delay-1">
@@ -556,7 +703,9 @@
   <section class="reserve-coffee scroll-spy">
     <!-- inner -->
     <div class="inner">
-      <img src="./images/reserve_logo.png" alt="" class="reserve-logo back-to-position to-right delay-0" />
+      <div class="img-wrap">
+        <img src="./images/reserve_logo.png" alt="" class="reserve-logo back-to-position to-right delay-0" />
+      </div>
 
       <div class="text-group">
         <img src="./images/reserve_text.png" alt="" class="description back-to-position to-right delay-1" />
@@ -566,7 +715,9 @@
         </div>
       </div>
 
-      <img src="./images/reserve_image.png" alt="" class="product back-to-position to-left delay-3" />
+      <div class="img-wrap">
+        <img src="./images/reserve_image.png" alt="" class="product back-to-position to-left delay-3" />
+      </div>
 
     </div>
     <!-- // inner -->
@@ -574,22 +725,44 @@
   <!-- // RESERVE COFFEE -->
 
   <!-- PICK YOUR FAVORITE -->
-      <section class="pick-your-favorite scroll-spy">
-        <!-- inner -->
-        <div class="inner">
+  <section class="pick-your-favorite scroll-spy">
+    <!-- inner -->
+    <div class="inner">
+      <div class="text-group">
+        <img src="./images/favorite_text1.png" alt="" class="title back-to-position to-right delay-0">
+        <img src="./images/favorite_text2.png" alt="" class="description back-to-position to-right delay-1">
 
-          <div class="text-group">
-            <img src="./images/favorite_text1.png" alt="" class="title back-to-position to-right delay-0">
-            <img src="./images/favorite_text2.png" alt="" class="description back-to-position to-right delay-1">
-
-            <div class="more back-to-position to-right delay-3">
-              <a href="javascript:void(0)" class="btn btn--white">자세히 보기</a>
-            </div>
-          </div>
-
+        <div class="more back-to-position to-right delay-3">
+          <a href="javascript:void(0)" class="btn btn--white">자세히 보기</a>
         </div>
-        <!-- // inner -->
-      </section>
+      </div>
+    </div>
+    <!-- // inner -->
+
+    <!-- mo_ver -->
+    <div class="inner mo">
+      <div class="text-group">
+        <div class="img-wrap">
+          <img src="./images/favorite_text1.png" alt="PICK YOUR FAVORITE" class="title back-to-position to-right delay-0">
+        </div>
+        <p>
+          <strong>다양한 메뉴</strong>를 <br> <strong>스타벅스</strong>에서 즐겨보세요.
+        </p>
+        <p>
+          스타벅스만의 특별함을 경험할 수 있는 최상의 선택 <strong>음료</strong><br> 
+          스타벅스 커피와 완벽한 어울림을 자랑하는 <strong>푸드</strong><br>
+          다양한 시도와 디자인으로 가치를 더하는 <strong>상품</strong><br>
+          소중한 사람에게 마음을 전하는 가장 좋은 <strong>방법</strong> <br>
+          <strong>스타벅스 카드</strong>
+        </p>
+      </div>
+      <div class="more back-to-position to-right delay-3">
+        <a href="javascript:void(0)" class="btn btn--white">자세히 보기</a>
+      </div>
+    </div>
+    <!-- // mo_ver -->
+
+  </section>
   <!-- // PICK YOUR FAVORITE -->
 
   <!-- RESERVE STORE -->
