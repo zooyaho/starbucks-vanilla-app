@@ -314,7 +314,7 @@ footer .menu li {
 }
 footer .menu li::before {
   content: "";
-  background-color: #555;;
+  background-color: #555;
   width: 3px;
   height: 3px;
   top: 0;

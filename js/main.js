@@ -60,8 +60,8 @@ new Swiper('.notice-line .swiper', {
 });
 
 /* Promotion Swiper */
-new Swiper('.promotion .pc .swiper', {
-  slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
+new Swiper('.promotion .swiper', {
+  slidesPerView: 1, // 한번에 보여줄 슬라이드 개수
   spaceBetween: 10, // 슬라이드 사이 여백
   centeredSlides: true, // 1번 슬라이드가 가운데 보이기
   loop: true,
@@ -69,26 +69,39 @@ new Swiper('.promotion .pc .swiper', {
     delay: 5000 // default 3000(3초)
   },
   pagination: {
-    el: '.promotion .pc .swiper-pagination', // 페이지 번호 요소 선택자
+    el: '.promotion .swiper-pagination', // 페이지 번호 요소 선택자
     clickable: true // 사용자의 페이지 번호 요소 제어 가능 여부
   },
   navigation: {
     prevEl: '.promotion .swiper-prev',
     nextEl: '.promotion .swiper-next'
-  }
+  },
+  breakpoints : { // 반응형 설정 가능, width값으로 조정
+    768 : { // 화면의 넓이가 768px 이상일 때
+      slidesPerView : 3,
+    },
+  },
+  
 });
 
 /* Awards Swiper */
-new Swiper('.awards .swiper', {
-  slidesPerView: 5,
+let awardsSiper = new Swiper('.awards .swiper', {
+  slidesPerView: 1,
   loop: true,
   autoplay: true,
   spaceBetween: 30,
   navigation: {
     prevEl: '.awards .swiper-prev',
     nextEl: '.awards .swiper-next'
-  }
+  },
+  breakpoints : {
+    768 : { // 화면의 넓이가 768px 이상일 때
+      slidesPerView : 5,
+    },
+    
+  },
 });
+
 
 
 /*  토글버튼으로 프로모션 숨김 동작 구현 */
@@ -137,6 +150,8 @@ const spyEls = document.querySelectorAll('section.scroll-spy');
 
 if(browserWidth < 768) {
   /* MOBILE VERSION */
+
+  /* ScrollMagic */
   spyEls.forEach( function (spyEl) {
 
     new ScrollMagic // Scene(): 감시, addTo(): 컨트롤러?라는걸 추가함
@@ -148,16 +163,20 @@ if(browserWidth < 768) {
       .addTo(new ScrollMagic.Controller()); // 우리가 추가한 옵션들을 내부 컨트롤러에 내용을 할당해서 실제로 동작할 수 있는 구조를 만들어주는 용도
   
   });
+
 } else {
+  /* PC VERSION */
+
+  /* ScrollMagic */
   spyEls.forEach( function (spyEl) {
 
-    new ScrollMagic // Scene(): 감시, addTo(): 컨트롤러?라는걸 추가함
+    new ScrollMagic
       .Scene({
-        triggerElement: spyEl, // 보여짐 여부를 감시할 요소를 지정
-        triggerHook: .8 // 뷰포트에서 실행 시작할 요소의 위치 지정
+        triggerElement: spyEl, 
+        triggerHook: .8 
       })
-      .setClassToggle(spyEl, 'show') // 인수 (클래스를 토글할 요소, 토글할 클래스 이름)
-      .addTo(new ScrollMagic.Controller()); // 우리가 추가한 옵션들을 내부 컨트롤러에 내용을 할당해서 실제로 동작할 수 있는 구조를 만들어주는 용도
+      .setClassToggle(spyEl, 'show') 
+      .addTo(new ScrollMagic.Controller());
   
   });
 }

@@ -107,7 +107,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .notice .notice-line .inner__left .notice-line__more .material-icons{
   color: #fff;
@@ -119,7 +118,6 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-
 }
 .notice .notice-line .inner__right h2{
   font-size: 17px;
@@ -132,14 +130,12 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  /* margin-right: 1em; */
 }
 .notice .notice-line .inner__right .toggle-promotion .material-icons {
   font-size: 30px;
 }
 /* PROMOTION */
-.notice .promotion .mo {
-  display: none;
-}
 .notice .promotion {
   height: 693px;
   background-color: #f6f5ef;
