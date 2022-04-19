@@ -730,4 +730,41 @@
     flex-direction: column;
   }
 
+  /* SIGN IN */
+  .signin {
+    margin-top: 70px;
+    padding: 4em 0 6em;
+  }
+  .signin h1 {
+    margin-bottom: 1em;
+  }
+  .signin__card {
+    width: 90%;
+  }
+  .signin__card h2 {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5em;
+  }
+  .signin__card span {
+    /* display: block; */
+    color: #555;
+  }
+  .signin__card form p {
+    display: block;
+    line-height: 1.6em;
+  }
+  .signin__card form p span {
+    color: #006633;
+  }
+  .signin__card .actions {
+    align-items: center;
+  }
+  .signin__card .actions a {
+    padding: 1em;
+  }
+
 }
