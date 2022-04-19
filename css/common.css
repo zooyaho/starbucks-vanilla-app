@@ -120,6 +120,9 @@ header .mo-header {
 .mo-gnb.hide {
   display: none;
 }
+.mo-gnb {
+  display: none;
+}
 .season-product.scroll-spy .inner > img:first-child  {
   display: none;
 }
